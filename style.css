@@ -1,0 +1,43 @@
+#page {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 90vh;
+}
+
+#left {
+    width: 30%;
+}
+
+#middle {
+    width: 50%;
+}
+
+#right {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: centers;
+    align-items: center;
+    height: 100%;
+}
+
+#logo {
+    padding: 2rem;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 160px;
+    justify-self: center;
+    padding: 6rem 0 6rem 0;
+}
+
+.touchpad {
+    width: 50px;
+    height: 50px;
+}
