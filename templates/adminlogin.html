@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DRAS Admin Login</title>
+        <link rel="stylesheet" href="../static/adminlogin.css">
+        <link rel="stylesheet" href="static/base.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <main id="main-holder">
+        {% if invalidLogin %}
+            <div id='invalidLogin'>
+                Error: Invalid login. Incorrect email or password
+            </div>
+        {% endif %}
+        <h1 id="login-header">Administrator Login</h1>
+
+        <form id="login-form" method="post" action="/admin" autocomplete="off">
+
+            <div class="input-div">
+                <label for="email-field"> Email: &nbsp; </label>
+                <input type="text" name="email" id="email-field" class="login-form-field" placeholder="Email" label="" required>
+
+            </div>
+
+            <div class="input-div">
+                <label for="password-field"> Password:&nbsp; </label>
+                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" required>
+
+            </div>
+            <!-- label looks ugly -->
+            <!-- <label for="login-form-submit"> Login:</label> -->
+            <input type="submit" value="Login" id="login-form-submit" required>
+
+        </form>
+        <!-- hey -->
+
+    </main>
+</body>
+</html>

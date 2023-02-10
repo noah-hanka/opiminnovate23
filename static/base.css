@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    font-family: 'Mulish', sans-serif;
+}
+
+button,
+#login-form-submit,
+#create-form-submit {
+    transition: all .25s;
+}
+
+button:hover,
+#login-form-submit:hover,
+#create-form-submit:hover {
+    transform: scale(1.05);
+}

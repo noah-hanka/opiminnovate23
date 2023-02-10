@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAS Create Account</title>
+    <link rel="stylesheet" href="../static/createAccount.css">
+    <link rel="stylesheet" href="static/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main id="main-holder">
+        <h1 id="login-header">DRAS - Account Creation</h1>
+
+        {% if invalidLogin %}
+        <div id='invalidLogin'>
+            Error: An account already exists under that email
+        </div>
+        {% endif %}
+        <form id="login-form" method="post" action="/makeAccount" autocomplete="off">
+
+            <div class="input-div">
+                <label for="email-field"> Email:</label>
+                <input type="text" name="email" id="email-field" class="login-form-field" placeholder="Email" required>
+            </div>
+
+            <div class="input-div">
+                <label for="password-field"> Password:</label>
+                <input type="password" name="password" id="password-field" class="login-form-field"
+                    placeholder="Password" required>
+            </div>
+
+            <div class="input-div">
+                <label for="birthdate"> Birthdate: </label>
+                <input type="date" name="birthdate" id="birthdate" class="login-form-field" placeholder="" required>
+            </div>
+
+            <div class="input-div">
+                <label for="license-number"> License Number:</label>
+                <input type="password" name="license_number" id="license-number" class="login-form-field"
+                    placeholder="123456789" required>
+            </div>
+
+            <div class="input-div">
+
+                <label for="ssn"> Social Security Number:</label>
+                <input type="password" name="social_security_number" id="ssn" class="login-form-field"
+                    placeholder="xxx-xx-xxxx" required>
+
+            </div>
+
+
+            <!-- <label for="create-form-submit"> Create Account:</label> -->
+            <input type="submit" value="Create Account" id="create-form-submit">
+
+        </form>
+        <!-- hey -->
+
+    </main>
+</body>
+
+</html>
