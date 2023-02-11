@@ -133,3 +133,32 @@ for (const header of floorHeaders) {
         }
     })
 }
+
+
+
+// image carousel
+const carousel = document.querySelector("#carousel");
+const images = carousel.querySelectorAll("img");
+let index = 0;
+
+function changeImage() {
+    for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove("prev", "active", "next");
+    }
+    images[index].classList.add("active");
+    if (index === 0) {
+        images[images.length - 1].classList.add("prev");
+    } else {
+        images[index - 1].classList.add("prev");
+    }
+    if (index === images.length - 1) {
+        images[0].classList.add("next");
+    } else {
+        images[index + 1].classList.add("next");
+    }
+    index = (index + 1) % images.length;
+}
+
+setInterval(changeImage, 3000); // Change image every 3 seconds
+
+
