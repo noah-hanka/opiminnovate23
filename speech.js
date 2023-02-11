@@ -78,7 +78,10 @@ recognition.onresult = (event) => {
                 const circle = document.createElement('div');
                 circle.classList.add("selectedFloor");
                 circle.addEventListener('click', (e) => {
-                    circle.remove();
+                    circle.classList.add('delete-animation')
+                    setTimeout(() => {
+                        circle.remove();
+                    }, 1000)
                 })
                 const textDiv = document.createElement('div');
                 textDiv.innerHTML = selectedFloor;
