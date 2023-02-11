@@ -74,13 +74,16 @@ deleteButton.addEventListener('click', (e) => {
 })
 const submitButton = document.querySelector("#submit");
 const floorList = document.querySelector('#floorList');
-submitButton.addEventListener('click', (e) => {
+function submitAction() {
     const selectedFloor = parseInt(buttonArr.join(''));
     if (selectedFloor <= maxFloor && !selectedFloorList.includes(selectedFloor)) {
         const circle = document.createElement('div');
         circle.classList.add("selectedFloor");
         circle.addEventListener('click', (e) => {
-            circle.remove();
+            circle.classList.add('delete-animation')
+            setTimeout(() => {
+                circle.remove();
+            }, 1000)
         })
         const textDiv = document.createElement('div');
         textDiv.innerHTML = selectedFloor;
@@ -102,7 +105,8 @@ submitButton.addEventListener('click', (e) => {
             submitButton.classList.remove('remove-invalid');
         }, 750);
     }
-});
+}
+submitButton.addEventListener('click', submitAction);
 
 
 const floorHeaders = document.querySelectorAll('.floorHeader');
