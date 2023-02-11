@@ -23,4 +23,6 @@ recognition.start();
 recognition.onresult = (event) => {
     const command = event.results[event.results.length - 1][0].transcript;
     console.log(command);
+    const
 }
+
