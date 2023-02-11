@@ -3,6 +3,8 @@ body {
     padding: 0;
     background-color: #002a54;
     color: #fc5475;
+    font-family: Sans-Serif;
+
 }
 
 #page {
@@ -20,6 +22,38 @@ body {
     width: 50%;
 }
 
+#destBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30%;
+    margin: 2rem 0 0 0;
+}
+
+#destHeader {
+    font-size: xx-large;
+}
+
+#floorList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectedFloor {
+    border: solid 2px #fc5475;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #right {
     width: 20%;
     display: flex;
@@ -33,7 +67,6 @@ body {
 #logo {
     margin: 2rem;
     color: #fc5475;
-    font-family: Sans-Serif;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -67,10 +100,23 @@ body {
     color: #fc5475;
     border: none;
     border-radius: 20%;
-    transition: .5 all;
+    transition: .75 all;
 }
 
 .touchpad:active {
     transform: scale(1.05);
+}
 
+.invalid {
+    transform: scale(1.1);
+    background-color: red;
+    color: black;
+    transition: .25s all;
+}
+
+.remove-invalid {
+    transform: scale(1);
+    transition: .75s all;
+    background-color: #2e2e2e;
+    color: #fc5475;
 }
