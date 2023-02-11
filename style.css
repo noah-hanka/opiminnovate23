@@ -59,6 +59,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s all;
+}
+
+.delete-animation {
+    opacity: 0;
+    transform: scale(0.1);
 }
 
 #right {
