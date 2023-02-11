@@ -81,6 +81,7 @@ function submitAction() {
         circle.classList.add("selectedFloor");
         circle.addEventListener('click', (e) => {
             circle.classList.add('delete-animation')
+            selectedFloorList.splice(selectedFloorList.indexOf(circle.childNodes[0].innerHTML), 1);
             setTimeout(() => {
                 circle.remove();
             }, 1000)
@@ -112,7 +113,8 @@ submitButton.addEventListener('click', submitAction);
 const floorHeaders = document.querySelectorAll('.floorHeader');
 for (const header of floorHeaders) {
     header.addEventListener('click', (e) => {
-        const menu = document.querySelector(`#menu-${header.id[7]}`)
+        const num = header.id[7];
+        const menu = document.querySelector(`#menu-${num}`)
         if (menu.style.maxHeight === "0px" || !menu.style.maxHeight) {
             menu.style.maxHeight = menu.scrollHeight + "px";
         } else {

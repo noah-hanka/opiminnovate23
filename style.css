@@ -48,10 +48,11 @@ body {
 #floorList {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     width: 80%;
+    transition: all 0.5s ease-in-out;
 }
 
 @keyframes fade_in {
@@ -78,6 +79,19 @@ body {
     align-items: center;
     transition: 1s all;
     animation: fade_in 1s;
+    box-shadow:
+        0 0 .1rem #fff,
+        0 0 .1rem #fff,
+        0 0 1rem #fc5475,
+        0 0 0.4rem #fc5475,
+        0 0 2.4rem #fc5475,
+        inset 0 0 .1rem #fff,
+        inset 0 0 .1rem #fff,
+        inset 0 0 1rem #fc5475,
+        inset 0 0 0.4rem #fc5475,
+        inset 0 0 1.0rem #fc5475;
+    transition: all 0.5s ease-in-out;
+
 }
 
 .delete-animation {
