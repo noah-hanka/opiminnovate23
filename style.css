@@ -49,6 +49,18 @@ body {
     width: 80%;
 }
 
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .selectedFloor {
     border: solid 2px #fc5475;
     border-radius: 100%;
@@ -60,6 +72,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: 1s all;
+    animation: fade_in 1s;
 }
 
 .delete-animation {
