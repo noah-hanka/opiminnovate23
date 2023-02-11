@@ -1,3 +1,47 @@
+
+// gunna test hartford for now
+let input = "";
+
+let name = document.querySelector('.name');
+let desc = document.querySelector('.desc');
+let temp = document.querySelector('.temp');
+
+
+// works somewhat
+
+async function getData() {
+    let data;
+
+    try {
+        const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&temperature_unit=fahrenheit');
+        data = await response.json();
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+
+    return data;
+}
+
+
+
+(async () => {
+    const data = await getData();
+    // Use the data here
+
+    console.log(data);
+    let mytemp = data.current_weather.temperature;
+    let myweather = data.current_weather.weathercode;
+    displayWeather(mytemp, myweather)
+
+})();
+
+
+function displayWeather(temp, code) {
+    const container = document.getElementById('data-container');
+    container.innerHTML = `<div>${temp} ${code}</div>`;
+}
+
+
 const digits = document.querySelectorAll(".digit");
 const typingResult = document.querySelector("#typingResult");
 let buttonArr = [];
@@ -17,13 +61,16 @@ deleteButton.addEventListener('click', (e) => {
 })
 const submitButton = document.querySelector("#submit");
 const floorList = document.querySelector('#floorList');
-submitButton.addEventListener('click', (e) => {
+function submitAction() {
     const selectedFloor = parseInt(buttonArr.join(''));
     if (selectedFloor <= maxFloor && !selectedFloorList.includes(selectedFloor)) {
         const circle = document.createElement('div');
         circle.classList.add("selectedFloor");
         circle.addEventListener('click', (e) => {
-            circle.remove();
+            circle.classList.add('delete-animation')
+            setTimeout(() => {
+                circle.remove();
+            }, 1000)
         })
         const textDiv = document.createElement('div');
         textDiv.innerHTML = selectedFloor;
@@ -45,7 +92,8 @@ submitButton.addEventListener('click', (e) => {
             submitButton.classList.remove('remove-invalid');
         }, 750);
     }
-});
+}
+submitButton.addEventListener('click', submitAction);
 
 
 const floorHeaders = document.querySelectorAll('.floorHeader');
