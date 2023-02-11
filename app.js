@@ -1,17 +1,29 @@
 
-// gunna test hartford for now
-let input = "";
 
 
 
+function getGeolocation() {
+    return new Promise(function (resolve, reject) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                console.log("Latitude: " + lat + "\nLongitude: " + lng);
+                resolve({ lat: lat, lng: lng });
+            });
+        } else {
+            reject("Geolocation is not supported by this browser.");
+        }
+    });
+}
 
-// works somewhat
 
-async function getData() {
+
+async function getData(latitude, longitude) {
     let data;
 
     try {
-        const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&temperature_unit=fahrenheit');
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit`);
         data = await response.json();
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -21,22 +33,23 @@ async function getData() {
 }
 
 
-
-(async () => {
-    const data = await getData();
-    // Use the data here
-
-    console.log(data);
-    let mytemp = data.current_weather.temperature;
-    let myweather = data.current_weather.weathercode;
-    displayWeather(mytemp, myweather)
-
-})();
+getGeolocation()
+    .then(
+        (coords) => {
+            return getData(coords['lat'], coords['lng']);
+        })
+    .then(
+        (data) => {
+            let mytemp = data.current_weather.temperature;
+            let myweather = data.current_weather.weathercode;
+            displayWeather(mytemp, myweather)
+        }
+    )
 
 
 function displayWeather(temp, code) {
     const container = document.getElementById('data-container');
-    container.innerHTML = `<div>${temp}</div>`;
+    container.innerHTML = `<div>${temp}°F</div>`;
 
     console.log(code);
 

@@ -188,45 +188,54 @@ body {
 .safetyButton:active {
     transform: scale(1.3);
 }
-.container{
+
+.container {
     width: 85vmin;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     overflow: hidden;
 }
-.wrapper{
-    width:100%;
-    display:flex;
+
+.wrapper {
+    width: 100%;
+    display: flex;
     animation: slide 16s infinite;
 }
-@keyframes slide{
-    0%{
+
+@keyframes slide {
+    0% {
         transform: translateX(0);
     }
-    25%{
+
+    25% {
         transform: translateX(0);
     }
-    30%{
+
+    30% {
         transform: translateX(-100%);
     }
-    50%{
+
+    50% {
         transform: translateX(-100%);
     }
-    55%{
+
+    55% {
         transform: translateX(-200%);
     }
-    75%{
+
+    75% {
         transform: translateX(-200%);
     }
-    80%{
+
+    80% {
         transform: translateX(-300%);
     }
-    100%{
+
+    100% {
         transform: translateX(-300%);
     }
-<<<<<<< HEAD
 
     100% {
         left: 0px;
@@ -304,6 +313,4 @@ body {
 
 .yellow {
     fill: #FFEB3B
-=======
->>>>>>> 1daeb3a9d16844c2222f84e5692f5f2742f2ef18
 }
