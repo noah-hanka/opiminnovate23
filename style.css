@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #002a54;
+    color: #fc5475;
 }
 
 #page {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    height: 90vh;
+    height: 100vh;
 }
 
 #left {
@@ -31,8 +32,17 @@ body {
 
 #logo {
     margin: 2rem;
-    color: #fc5475;
     text-align: center;
+}
+
+#typingResult {
+    width: 162px;
+    height: 50px;
+    font-size: large;
+    text-align: center;
+    justify-self: flex-end;
+    margin: 1rem 0 0 0;
+
 }
 
 #buttonContainer {
@@ -42,7 +52,7 @@ body {
     justify-content: center;
     width: 162px;
     justify-self: center;
-    margin: 6rem 0 6rem 0;
+    margin: 1rem 0 6rem 0;
 }
 
 .touchpad {
@@ -53,4 +63,10 @@ body {
     color: #fc5475;
     border: none;
     border-radius: 20%;
+    transition: .5 all;
+}
+
+.touchpad:active {
+    transform: scale(1.05);
+
 }
