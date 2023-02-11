@@ -48,7 +48,7 @@ getGeolocation()
 
 
 function displayWeather(temp, code) {
-    const container = document.getElementById('data-container');
+    const container = document.getElementById('weatherText');
     container.innerHTML = `<div>${temp}°F</div>`;
 
     console.log(code);
