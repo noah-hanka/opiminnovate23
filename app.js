@@ -2,9 +2,7 @@
 // gunna test hartford for now
 let input = "";
 
-let name = document.querySelector('.name');
-let desc = document.querySelector('.desc');
-let temp = document.querySelector('.temp');
+
 
 
 // works somewhat
@@ -38,7 +36,22 @@ async function getData() {
 
 function displayWeather(temp, code) {
     const container = document.getElementById('data-container');
-    container.innerHTML = `<div>${temp} ${code}</div>`;
+    container.innerHTML = `<div>${temp}</div>`;
+
+    console.log(code);
+
+    if (code == 0 || code == 1) {
+        let element = document.getElementById("sunny");
+        element.style.display = "flex";
+    }
+    else if (code == 2 || code == 3 || code == 45 || code == 48) {
+        let element = document.getElementById("cloudy");
+        element.style.display = "flex";
+    }
+    else {
+        let element = document.getElementById("rainy");
+        element.style.display = "flex";
+    }
 }
 
 
