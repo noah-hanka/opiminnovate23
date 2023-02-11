@@ -3,8 +3,7 @@ body {
     padding: 0;
     background-color: #1e1e1e;
     color: #fc5475;
-    font-family: Sans-Serif;
-
+    font-family: 'Mukta', sans-serif;
 }
 
 #page {
@@ -85,7 +84,7 @@ body {
     text-align: center;
     justify-self: flex-end;
     margin: 1rem 0 0 0;
-
+    text-decoration: underline;
 }
 
 #buttonContainer {
@@ -164,4 +163,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 1rem 0 1rem;
+    transition: .75s all;
+}
+
+.safetyButton:active {
+    transform: scale(1.3);
 }
