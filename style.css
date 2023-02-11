@@ -226,17 +226,10 @@ body {
     width: 3600px;
     height: 800px;
     margin: 0 0 0 -2400px;
-    position: relative;
-    -webkit-animation-name: slide_animation;
-    -webkit-animation-duration: 33s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alterante;
-    -webkit-animation-play-state: running;
 }
 
 .img-container {
     height: 800px;
     width: 1200px;
-    position: relative;
-    float: left;
+    animation: slide_animation 2s step-end infinite;
 }

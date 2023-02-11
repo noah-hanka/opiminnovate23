@@ -61,7 +61,7 @@ deleteButton.addEventListener('click', (e) => {
 })
 const submitButton = document.querySelector("#submit");
 const floorList = document.querySelector('#floorList');
-submitButton.addEventListener('click', (e) => {
+function submitAction() {
     const selectedFloor = parseInt(buttonArr.join(''));
     if (selectedFloor <= maxFloor && !selectedFloorList.includes(selectedFloor)) {
         const circle = document.createElement('div');
@@ -89,7 +89,8 @@ submitButton.addEventListener('click', (e) => {
             submitButton.classList.remove('remove-invalid');
         }, 750);
     }
-});
+}
+submitButton.addEventListener('click', submitAction);
 
 
 const floorHeaders = document.querySelectorAll('.floorHeader');
