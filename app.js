@@ -128,7 +128,7 @@ for (const header of floorHeaders) {
     header.addEventListener('click', (e) => {
         const num = header.id[7];
         const menu = document.querySelector(`#menu-${num}`)
-        if (menu.style.maxHeight === "0px" || !menu.style.maxHeight) {
+        if (menu.style.maxHeight === "0px") {
             menu.style.maxHeight = menu.scrollHeight + "px";
         } else {
             menu.style.maxHeight = "0px";

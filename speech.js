@@ -66,6 +66,18 @@ recognition.maxAlternatives = 1;
 
 recognition.start();
 
+const mic = document.querySelector("#micButton");
+let muted = false;
+mic.addEventListener('click', (e) => {
+    console.log('muted');
+    mic.classList.toggle("muted");
+    if (muted) {
+        recognition.start();
+    } else {
+        recognition.stop();
+    }
+})
+
 recognition.onresult = (event) => {
     let command = event.results[event.results.length - 1][0].transcript;
     command = command.toLowerCase().trim();
@@ -94,3 +106,6 @@ recognition.onresult = (event) => {
         }
     }
 }
+
+
+
